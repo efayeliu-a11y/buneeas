@@ -1,8 +1,48 @@
 img {
     width: 300px;
 }
+
+.carousel {
+    overflow: hidden;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: slide 20s linear infinite;
+    width: max-content;
+}
+
+/* make top images share a fixed height but keep original widths */
+.image-container img {
+    height: 400px; /* increased size */
+    width: auto;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.logo {
+    width: 60px;
+}
+
+.twitter-logo {
+    width: 50px;
+}
+
 body {
     text-align: center;
-    font-family: 'Poppins', sans-serif;
-    background: aliceblue;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(255, 202, 212);
+    color: rgb(98, 87, 70); /* medium brown text */
+}
+.logo {
+    width: 60px;
+}
+
+.twitter-logo {
+    width: 50px;
 }
