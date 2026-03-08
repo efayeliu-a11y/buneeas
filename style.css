@@ -53,3 +53,6 @@ body {
     font-family: 'Poppins', sans-serif;
     background: rgb(255, 187, 199);
 }
+body {
+  cursor: url("https://cdn-icons-png.flaticon.com/512/304/304000.png") 16 16, auto;
+}
