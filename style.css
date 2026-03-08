@@ -37,12 +37,19 @@ body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     background: rgb(255, 202, 212);
-    color: rgb(98, 87, 70); /* medium brown text */
 }
+
+
 .logo {
     width: 60px;
 }
 
 .twitter-logo {
     width: 50px;
+}
+
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: rgb(255, 187, 199);
 }
