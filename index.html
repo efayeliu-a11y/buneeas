@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>buneeas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="background-block"></div>
-  <header>My Portfolio</header>
-  <main>
-    <h1>WELCOME TO MY PAGE</h1>
-    <p>hello hellooooo</p>
-  </main>
-    <div class="carousel">
-      <div class="image-container">
-        <img src="https://pbs.twimg.com/media/HC6w747bMAAmRHh?format=jpg&name=4096x4096" alt="Art" />
-        <img src="https://pbs.twimg.com/media/GxMhNjiWIAAINvA?format=jpg&name=large" alt="Art 2" />
-        <img src="https://pbs.twimg.com/media/GtTaeEZWYAAzDnX?format=jpg&name=large" alt="Art 3" />
-        <img src="https://pbs.twimg.com/media/GtTcVI1WwAA37GU?format=jpg&name=large" alt="Art 4" />
-        <img src="https://pbs.twimg.com/media/GxZM_N-WcAAmH4T?format=jpg&name=large" alt="Art 5" />
-        <!-- duplicates for seamless carousel -->
-        <img src="https://pbs.twimg.com/media/HC6w747bMAAmRHh?format=jpg&name=4096x4096" alt="Art" />
-        <img src="https://pbs.twimg.com/media/GxMhNjiWIAAINvA?format=jpg&name=large" alt="Art 2" />
-        <img src="https://pbs.twimg.com/media/GtTaeEZWYAAzDnX?format=jpg&name=large" alt="Art 3" />
-        <img src="https://pbs.twimg.com/media/GtTcVI1WwAA37GU?format=jpg&name=large" alt="Art 4" />
-        <img src="https://pbs.twimg.com/media/GxZM_N-WcAAmH4T?format=jpg&name=large" alt="Art 5" />
-      </div>
+
+  <!-- About box (hidden by default) -->
+  <div id="about-box" class="about-box">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>Hi! My name is Ephie and I'm a Chinese-Canadian artist. I am currently 16, born August 14, 2009.</p>
+      <p>This button took forever to code pls</p>
+      <button id="close-about">Close</button>
     </div>
-    <h1>buneeas✧˖°</h1>
-    <p>Testing testing small website!!</p>
-    <p>Above is my art hehe!</p>
-    <p>below is a random image of a cat from the internet~</p>
-    <p>my business email: buneeas@gmail.com</p>
-    <img id="cat-img" alt="Cat image" />
-    <p>Links! Socials~</p>
-    
-    <a href="https://vgen.co/buneeas">
-      <img class="logo" src="https://help.vgen.co/hc/article_attachments/13004231445911" alt="VGen commission" />
-    </a>
-    <a href="https://x.com/buneeas">
-      <img class="logo twitter-logo" src="https://pngimg.com/d/twitter_PNG34.png" alt="Twitter/X profile" />
-    </a>
-    <a href="https://www.instagram.com/buneeas/">
-      <img class="logo instagram-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/960px-Instagram_logo_2016.svg.png" alt="Instagram profile" />
-    </a>
-    <script type="module" src="index.js"></script>
-      <style>
-    /* Change the cursor to your image */
-    body {
-      cursor: url("https://cdn-icons-png.flaticon.com/32/304/304000.png") 16 16, auto;
-    }
-  </style>
+  </div>
+
+  <!-- Contact box (hidden by default) -->
+  <div id="contact-box" class="about-box">
+    <div class="about-content">
+      <h2>Contact Me</h2>
+      <p>Email: your-email@example.com</p>
+      <button id="close-contact">Close</button>
+    </div>
+  </div>
+
+  <!-- Taskbar -->
+  <div class="taskbar">
+      <div>Home</div>
+      <div>About</div>
+      <div>Contact</div>
+  </div>
+
+  <!-- Side borders -->
+  <div class="side-border left"></div>
+  <div class="side-border right"></div>
+
+  <!-- Header with bunny and wings -->
+  <div class="header-container">
+      <img class="wing left-wing" src="https://img1.picmix.com/output/stamp/thumb/3/7/7/9/2629773_9a5e1.gif">
+      <img class="bunny" src="https://media.tenor.com/ikzslJI3dh8AAAAj/pixel-bunny.gif">
+      <img class="wing right-wing" src="https://img1.picmix.com/output/stamp/thumb/3/7/7/9/2629773_9a5e1.gif">
+  </div>
+
+  <!-- Main text content -->
+  <div class="text-box">
+      <h1>buneeas✧˖°</h1>
+      <p>Testing testing small website!!</p>
+      <p>Above is my art hehe!!</p>
+      <p>Below is a random image of a cat from the internet~</p>
+      <p>My business email: buneeas@gmail.com</p>
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel">
+      <div class="image-container">
+          <img src="https://pbs.twimg.com/media/HC6w747bMAAmRHh?format=jpg&name=4096x4096" alt="Art" />
+          <img src="https://pbs.twimg.com/media/GxMhNjiWIAAINvA?format=jpg&name=large" alt="Art 2" />
+          <img src="https://pbs.twimg.com/media/GtTaeEZWYAAzDnX?format=jpg&name=large" alt="Art 3" />
+          <img src="https://pbs.twimg.com/media/GtTcVI1WwAA37GU?format=jpg&name=large" alt="Art 4" />
+          <img src="https://pbs.twimg.com/media/GxZM_N-WcAAmH4T?format=jpg&name=large" alt="Art 5" />
+          <!-- duplicate for seamless scroll -->
+          <img src="https://pbs.twimg.com/media/HC6w747bMAAmRHh?format=jpg&name=4096x4096" alt="Art" />
+          <img src="https://pbs.twimg.com/media/GxMhNjiWIAAINvA?format=jpg&name=large" alt="Art 2" />
+          <img src="https://pbs.twimg.com/media/GtTaeEZWYAAzDnX?format=jpg&name=large" alt="Art 3" />
+          <img src="https://pbs.twimg.com/media/GtTcVI1WwAA37GU?format=jpg&name=large" alt="Art 4" />
+          <img src="https://pbs.twimg.com/media/GxZM_N-WcAAmH4T?format=jpg&name=large" alt="Art 5" />
+      </div>
+  </div>
+
+  <!-- Links / Socials -->
+  <div class="social-links">
+      <a href="https://vgen.co/buneeas">
+          <img class="logo" src="https://help.vgen.co/hc/article_attachments/13004231445911" alt="VGen commission" />
+      </a>
+      <a href="https://x.com/buneeas">
+          <img class="logo twitter-logo" src="https://pngimg.com/d/twitter_PNG34.png" alt="Twitter/X profile" />
+      </a>
+      <a href="https://www.instagram.com/buneeas/">
+          <img class="logo instagram-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/960px-Instagram_logo_2016.svg.png" alt="Instagram profile" />
+      </a>
+  </div>
+
+  <!-- Bottom fade -->
+  <div class="bottom-fade"></div>
+
+  <script type="module" src="index.js"></script>
 </body>
 </html>

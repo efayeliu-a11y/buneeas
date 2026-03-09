@@ -17,4 +17,29 @@ fetch("https://api.thecatapi.com/v1/images/search")
     console.error(e);
     catImgElem.alt = "Failed to load cat image";
   });
+  // Show about box
+const aboutBox = document.getElementById("about-box");
+const aboutBtn = document.querySelector(".taskbar div:nth-child(2)"); // "About" button
+const closeBtn = document.getElementById("close-about");
+
+aboutBtn.addEventListener("click", () => {
+  aboutBox.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+  aboutBox.style.display = "none";
+});
+// Contact box
+const contactBox = document.getElementById("contact-box");
+const contactBtn = document.querySelector(".taskbar div:nth-child(3)"); // "Contact" button
+const closeContactBtn = document.getElementById("close-contact");
+
+contactBtn.addEventListener("click", () => {
+  contactBox.style.display = "flex";
+});
+
+closeContactBtn.addEventListener("click", () => {
+  contactBox.style.display = "none";
+});
+
   
