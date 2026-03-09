@@ -8,21 +8,12 @@
 </head>
 <body>
 
-  <!-- About box (hidden by default) -->
-  <div id="about-box" class="about-box">
-    <div class="about-content">
-      <h2>About Me</h2>
-      <p>Hi! My name is Ephie and I'm a Chinese-Canadian artist. I am currently 16, born August 14, 2009.</p>
-      <p>This button took forever to code pls</p>
-      <button id="close-about">Close</button>
-    </div>
-  </div>
-
   <!-- Contact box (hidden by default) -->
   <div id="contact-box" class="about-box">
     <div class="about-content">
       <h2>Contact Me</h2>
-      <p>Email: your-email@example.com</p>
+      <p>Email: buneeas@gmail.com</p>
+      <p>Discord: @buneeas</p>
       <button id="close-contact">Close</button>
     </div>
   </div>
@@ -30,8 +21,9 @@
   <!-- Taskbar -->
   <div class="taskbar">
       <div>Home</div>
-      <div>About</div>
-      <div>Contact</div>
+      <div id="about-btn" onclick="window.location.href='about.html'">About</div>
+      <div id="contact-btn">Contact</div>
+      <div id="gallery-btn">Gallery</div>
   </div>
 
   <!-- Side borders -->
@@ -52,6 +44,7 @@
       <p>Above is my art hehe!!</p>
       <p>Below is a random image of a cat from the internet~</p>
       <p>My business email: buneeas@gmail.com</p>
+      <img id="cat-img" src="" alt="Random Cat" style="max-width:300px;margin-top:10px;">
   </div>
 
   <!-- Carousel -->
@@ -87,6 +80,45 @@
   <!-- Bottom fade -->
   <div class="bottom-fade"></div>
 
+  <!-- Confetti button -->
+  <button id="confetti-btn" class="confetti-btn">🎉</button>
+
   <script type="module" src="index.js"></script>
+  <script>
+    // Cat API
+    const catImgElem = document.getElementById("cat-img");
+    fetch("https://api.thecatapi.com/v1/images/search")
+      .then(res => res.json())
+      .then(data => { catImgElem.src = data[0].url; })
+      .catch(e => { console.error(e); });
+
+    // Contact box
+    const contactBox = document.getElementById("contact-box");
+    const contactBtn = document.getElementById("contact-btn");
+    const closeContactBtn = document.getElementById("close-contact");
+    contactBtn.addEventListener("click", () => { contactBox.style.display = "flex"; });
+    closeContactBtn.addEventListener("click", () => { contactBox.style.display = "none"; });
+
+    // Confetti button
+    const confettiBtn = document.getElementById("confetti-btn");
+    confettiBtn.addEventListener("click", () => {
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        document.body.appendChild(confetti);
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+        confetti.style.width = Math.random() * 10 + 5 + "px";
+        confetti.style.height = Math.random() * 10 + 5 + "px";
+        const duration = Math.random() * 3000 + 2000;
+        confetti.animate([{ transform: 'translateY(0) rotate(0deg)' }, { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random()*720}deg)` }], { duration, easing: 'linear' });
+        setTimeout(() => confetti.remove(), duration);
+      }
+    });
+
+    // Gallery button
+    const galleryBtn = document.getElementById("gallery-btn");
+    galleryBtn.addEventListener("click", () => { window.location.href = "gallery.html"; });
+  </script>
 </body>
 </html>

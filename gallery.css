@@ -1,0 +1,138 @@
+/* General body */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(170, 131, 123);
+  position: relative;
+  overflow-x: hidden;
+  cursor: url("https://cdn-icons-png.flaticon.com/32/304/304000.png") 16 16, auto;
+}
+
+/* Background image */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url("https://i.pinimg.com/1200x/db/b7/be/dbb7be36b4cdd826238945d06139ecb6.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Taskbar */
+.taskbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 50px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Side borders */
+.side-border {
+  position: fixed;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background: white;
+  z-index: 999;
+}
+.side-border.left { left: 0; }
+.side-border.right { right: 0; }
+
+/* About / Contact boxes */
+.about-box {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.about-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+#close-about-gallery, #close-contact-gallery {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(255, 187, 199);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Gallery masonry layout */
+.gallery-container {
+  column-count: 3;
+  column-gap: 30px;
+  max-width: 1200px;
+  margin: 120px auto;
+}
+.gallery-container img {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  break-inside: avoid;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.gallery-container img:hover {
+  transform: scale(1.02);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none; /* ensure hidden on page load */
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+}
+.lightbox:hover { cursor: pointer; }
+
+/* Magnifier */
+.magnifier {
+  display: none;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background-repeat: no-repeat;
+  background-size: 400%; /* big zoom */
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* Optional: magnifying glass cursor inside lightbox */
+.lightbox-content:hover {
+  cursor: url('https://cdn-icons-png.flaticon.com/32/61/61484.png') 16 16, auto;
+}

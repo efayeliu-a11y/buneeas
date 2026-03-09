@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Me - Buneeas</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        color: rgb(170, 131, 123);
+        text-align: center;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-image: url("https://i.pinimg.com/1200x/db/b7/be/dbb7be36b4cdd826238945d06139ecb6.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .taskbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .taskbar div { cursor: pointer; }
+
+    .side-border {
+        position: fixed;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        background: white;
+        z-index: 999;
+    }
+    .side-border.left { left: 0; }
+    .side-border.right { right: 0; }
+
+    /* About container */
+    .about-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 120px;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .about-box {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        max-width: 400px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .body-text-box {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        max-width: 600px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        text-align: left;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    /* New bottom section */
+    .language-section {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        max-width: 700px;
+        margin: 50px auto;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+    .language-section img.flag {
+        width: 200px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .language-section p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .language-section span.emoji {
+        font-size: 32px;
+        margin: 0 5px;
+    }
+
+    /* Bottom fade */
+    .bottom-fade {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(rgba(255,255,255,0), white);
+    }
+
+    /* Responsive */
+    @media(max-width: 900px){
+        .about-container { flex-direction: column; align-items: center; gap: 30px; }
+        .profile-pic { width: 200px; height: 200px; }
+        .body-text-box { max-width: 90%; }
+        .language-section { max-width: 90%; }
+    }
+</style>
+</head>
+<body>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div onclick="window.location.href='index.html'">Home</div>
+        <div class="active">About</div>
+        <div onclick="window.location.href='gallery.html'">Gallery</div>
+        <div id="contact-btn">Contact</div>
+    </div>
+
+    <!-- Side borders -->
+    <div class="side-border left"></div>
+    <div class="side-border right"></div>
+
+    <!-- About content -->
+    <div class="about-container">
+        <img class="profile-pic" src="https://pbs.twimg.com/profile_images/1992404709261316097/-SBJay0g_400x400.jpg" alt="Profile Picture">
+
+        <div class="about-box">
+            Ephie here!!!!! HII!!!!
+        </div>
+
+        <div class="body-text-box">
+            Hi! I’m Ephie, a 16-year-old Chinese-Canadian artist.  
+            I love drawing, creating pixel art, and sharing my art online.  
+            On this site, you can explore my gallery, see some of my commissions, and learn more about me.  
+            My goal is to make art that feels fun, colorful, and full of personality.  
+            Thanks for visiting!
+        </div>
+    </div>
+
+    <!-- New language section -->
+    <div class="language-section">
+        <img class="flag" src="https://globalnews.ca/wp-content/uploads/2019/09/canada-china-flag.png?w=720" alt="Canada-China flag">
+        <p>I'm Canadian-Chinese!!!! Fun fact, I speak: </p>
+        <p>
+            <span class="emoji">🇨🇳</span>
+            <span class="emoji">🇫🇷</span>
+            <span class="emoji">🇯🇵 (learning pspspp)</span>
+        </p>
+    </div>
+
+    <!-- Contact popup -->
+    <div id="contact-box" class="about-box" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); max-width:400px;">
+        <div class="about-content">
+            <h2>Contact Me</h2>
+            <p>Email: buneeas@gmail.com</p>
+            <p>Discord: @buneeas</p>
+            <button id="close-contact">Close</button>
+        </div>
+    </div>
+
+    <div class="bottom-fade"></div>
+
+    <script>
+        // Contact popup
+        const contactBox = document.getElementById("contact-box");
+        const contactBtn = document.getElementById("contact-btn");
+        const closeContactBtn = document.getElementById("close-contact");
+
+        contactBtn.addEventListener("click", () => { contactBox.style.display = "flex"; });
+        closeContactBtn.addEventListener("click", () => { contactBox.style.display = "none"; });
+    </script>
+
+</body>
+</html>

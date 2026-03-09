@@ -1,10 +1,14 @@
+/* ------------------------------ */
+/* Main Page CSS - Fixed Version  */
+/* ------------------------------ */
+
 /* General body setup */
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     text-align: center;
-    font-family: 'Poppins', sans-serif; /* normal font, not cursive */
+    font-family: 'Poppins', sans-serif;
     color: rgb(170, 131, 123);
     position: relative;
     overflow-x: hidden;
@@ -22,7 +26,7 @@ body::before {
     background-image: url("https://i.pinimg.com/1200x/db/b7/be/dbb7be36b4cdd826238945d06139ecb6.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.3; /* transparency */
+    opacity: 0.3;
     z-index: -1;
 }
 
@@ -59,13 +63,25 @@ body::before {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-top: 70px; /* space below taskbar */
+    margin-top: 70px;
     z-index: 2;
     position: relative;
 }
 
-.bunny { width: 120px; z-index: 2; }
-.wing { width: 80px; opacity: 0.5; transform-origin: center bottom; animation: flap 2s infinite linear; }
+/* Bunny image */
+.bunny {
+    width: 120px;
+    z-index: 2;
+}
+
+/* Wings */
+.wing {
+    width: 80px;
+    opacity: 0.5;
+    transform-origin: center bottom;
+    animation: flap 2s infinite linear;
+    z-index: 1;
+}
 .left-wing { transform: none; }
 .right-wing { transform: scaleX(-1); animation: flap-right 2s infinite linear; }
 
@@ -93,22 +109,27 @@ body::before {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Carousel */
+/* --------------------- */
+/* Carousel Fix */
 .carousel {
     overflow: hidden;
     margin: 50px 0;
 }
-.image-container {
+
+.carousel .image-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     animation: slide 20s linear infinite;
     width: max-content;
 }
-.image-container img {
+
+.carousel .image-container img {
     height: 400px;
-    width: auto;
+    width: auto; /* preserve aspect ratio */
+    object-fit: contain;
 }
+
 @keyframes slide {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -124,12 +145,12 @@ body::before {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 30px; /* make space above bottom fade */
+    margin-bottom: 30px;
     z-index: 2;
     position: relative;
 }
 
-/* Bottom fade that doesn't block clicks */
+/* Bottom fade */
 .bottom-fade {
     position: fixed;
     bottom: 0;
@@ -137,39 +158,61 @@ body::before {
     width: 100%;
     height: 200px;
     background: linear-gradient(to bottom, rgba(255,187,199,0), white);
-    pointer-events: none; /* allows clicking icons below */
+    pointer-events: none;
     z-index: 1;
 }
+
 /* About box */
 .about-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
-  display: none; /* hidden by default */
-  justify-content: center;
-  align-items: center;
-  z-index: 2000; /* above taskbar and content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
 }
 
 .about-content {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 #close-about {
-  margin-top: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border: none;
-  background-color: rgb(255, 187, 199);
-  color: white;
-  border-radius: 8px;
-  font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(255, 187, 199);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Confetti button */
+.confetti-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 3000;
+}
+
+/* Confetti pieces */
+.confetti {
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+    z-index: 2999;
+    border-radius: 50%;
 }

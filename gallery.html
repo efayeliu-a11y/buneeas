@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Buneeas Gallery</title>
+<link rel="stylesheet" href="gallery.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Taskbar -->
+<div class="taskbar">
+  <div onclick="window.location.href='index.html'">Home</div>
+  <div id="about-btn-gallery" onclick="window.location.href='about.html'">About</div>
+  <div id="contact-btn-gallery">Contact</div>
+  <div class="active">Gallery</div>
+</div>
+
+<!-- Side borders -->
+<div class="side-border left"></div>
+<div class="side-border right"></div>
+
+<!-- Contact box -->
+<div id="contact-box-gallery" class="about-box">
+  <div class="about-content">
+    <h2>Contact Me</h2>
+    <p>Email: buneeas@gmail.com</p>
+    <p>Discord: @buneeas</p>
+    <button id="close-contact-gallery">Close</button>
+  </div>
+</div>
+
+<!-- Gallery -->
+<div class="gallery-container">
+  <div class="gallery-item"><img src="https://pbs.twimg.com/media/HC6w747bMAAmRHh?format=jpg&name=4096x4096" onclick="openLightbox(this)"></div>
+  <div class="gallery-item"><img src="https://pbs.twimg.com/media/GxMhNjiWIAAINvA?format=jpg&name=large" onclick="openLightbox(this)"></div>
+  <div class="gallery-item"><img src="https://pbs.twimg.com/media/GxZM_N-WcAAmH4T?format=jpg&name=large" onclick="openLightbox(this)"></div>
+  <div class="gallery-item"><img src="https://pbs.twimg.com/media/GtTcVI1WwAA37GU?format=jpg&name=large" onclick="openLightbox(this)"></div>
+  <div class="gallery-item"><img src="https://pbs.twimg.com/media/GtTaeEZWYAAzDnX?format=jpg&name=large" onclick="openLightbox(this)"></div>
+  <div class="gallery-item"><img src="https://pbs.twimg.com/media/GtTeBTLWcAAcd4C?format=jpg&name=large" onclick="openLightbox(this)"></div>
+  <div class="gallery-item"><img src="https://pbs.twimg.com/media/G8Ls4qAWUAAqa0e?format=jpg&name=4096x4096" onclick="openLightbox(this)"></div>
+  <div class="gallery-item"><img src="https://pbs.twimg.com/media/Gob3a3uWwAAxV0O?format=jpg&name=large" onclick="openLightbox(this)"></div>
+</div>
+
+<!-- Lightbox + magnifier -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" class="lightbox-content">
+  <div class="magnifier"></div>
+</div>
+
+<script src="gallery.js"></script>
+</body>
+</html>
